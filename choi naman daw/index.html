@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Choi Life</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="bloom-container"></div>
+    <canvas id="starfield"></canvas>
+    <div class="retro-scanline"></div>
+
+    <div id="container">
+        <h1>⚡ Choi Ngani ⚡</h1>
+
+<div class="top-section">
+    <div class="status-window">
+        <div class="status-content">
+            <div class="avatar-section">
+                <div class="avatar-container">
+                    <img class="avatar" id="userAvatar" src="avatar" alt="avatar">
+                    <div class="status-dot" id="statusDot"></div>
+                </div>
+                <div class="user-info">
+                    <div class="status-text">
+                        <span style="color: #888">> USER:</span>
+                        <span id="username">Loading...</span>
+                    </div>
+                    <div class="status-text">
+                        <span style="color: #888">> STATUS:</span>
+                        <span id="status">Offline</span>
+                    </div>
+                </div>
+            </div>
+            <div class="spotify-status" id="spotifyContainer" style="display: none;">
+                <div class="status-text" style="margin-bottom: 10px;">
+                    <span style="color: #888">> NOW PLAYING:</span>
+                </div>
+                <div class="status-text" style="padding-left: 10px;">
+                    <span style="color: #888">TITLE:</span>
+                    <span id="spotifySong">N/A</span>
+                </div>
+                <div class="status-text" style="padding-left: 10px;">
+                    <span style="color: #888">ARTIST:</span>
+                    <span id="spotifyArtist">N/A</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+            <div class="win98-window">
+                <div class="win98-titlebar">
+                    <div style="display: flex; align-items: center;">
+                        <img class="win98-icon"
+                            src="https://cdn2.steamgriddb.com/icon/2b515e2bdd63b7f034269ad747c93a42/4/512x512.png"
+                            alt="Notepad icon">
+                        <span class="win98-titlebar-text">about.txt - Notepad</span>
+                    </div>
+                    <div class="win98-buttons">
+                        <div class="win98-button" style="font-size: 10px;">_</div>
+                        <div class="win98-button" style="font-size: 10px;">☐</div>
+                        <div class="win98-button" style="font-size: 10px;">×</div>
+                    </div>
+                </div>
+                <div class="win98-content">
+                    <p>
+                        45yo, bisaya, professional bisayang bisakol. if i'm not playing i'm being playing my patutin
+                        fucking bitch with horrible takes. extremely online and
+                        proud bisaya. Maybe galulu to exhaustion:P<br><br>Medyo tangang bisakol ₊˚⊹♡
+                    </p>
+
+                    <pre>
+
+
+
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <div class="file-system">
+            <div class="terminal-window">
+                <div class="fire-text" style="margin-bottom: 10px;">OBSESSIONS.TXT</div>
+                <ul class="file-list">
+                    <li><span class="file-name">GAMING.EXE</span> <span class="file-type">Fivem/SA-MP</span></li>
+                    <li><span class="file-name">ART.PNG</span> <span class="file-type">Art Of Dick</span></li>
+                    <li><span class="file-name">HOMEWORK.MP4</span> <span class="file-type">NAGA LULU</span></li>
+                    <li><span class="file-name">INDEX.HTML</span> <span class="file-type">Web Development</span></li>
+                </ul>
+            </div>
+
+            <div class="terminal-window files-window">
+                <div class="fire-text" style="margin-bottom: 10px;">SYSTEM FILES</div>
+                <a href="https://www.tiktok.com/@choiii20_" class="file-link">
+                    <span class="file-name">TIKTOK.BAT</span>
+                    <span class="file-size">🖤 13.37 KB</span>
+                </a>
+                <a href="https://www.facebook.com/ChoiiiHermano" class="file-link">
+                    <span class="file-name">FACEBOOK.BAT</span>
+                    <span class="file-size">💙 42.0 KB</span>
+                </a>
+                <a href="https://discord.com/users/defnotchoii_" class="file-link">
+                    <span class="file-name">DISCORD.EXE</span>
+                    <span class="file-size">💬 69.0 KB</span>
+                </a>
+                <a href="https://www.youtube.com/@ChoiHermano" class="file-link">
+                    <span class="file-name">YOUTUBE.COM</span>
+                    <span class="file-size">❤️ 1.44 MB</span>
+                </a>
+            </div>
+        </div>
+        <div class="file-system comments-section">
+            <div class="terminal-window">
+                <div class="fire-text" style="margin-bottom: 10px;">GUESTBOOK.TXT</div>
+                <div id="comments-list" class="comments-container">
+                    <!-- Comments will be loaded here -->
+                </div>
+            </div>
+
+            <div class="terminal-window">
+                <div class="fire-text" style="margin-bottom: 10px;">POST.EXE</div>
+                <form id="comment-form" class="comment-form">
+                    <input type="text" id="comment-name" placeholder="> ENTER YOUR NAME..." required>
+                    <textarea id="comment-text" placeholder="> TYPE YOUR MESSAGE..." required></textarea>
+                    <button type="submit" id="submit-comment">> POST COMMENT</button>
+                </form>
+            </div>
+        </div>
+
+        <div id="visitor-counter">
+            <span id="visitor-count" class="text-green-500 font-mono">Visitors: ...</span>
+            <span style="color: #f0f;">█</span>
+        </div>
+
+        <div class="marquee-container">
+            <marquee scrollamount="3">
+                ★ PUTANG INA NYO TINRY KO LANG TO DI AKO JEJEMON HA ★
+            </marquee>
+        </div>
+    </div>
+    <div class="crt"></div>
+    <script type="module" src="script.js"></script>
+</body>
+
+
+<script>
+    // STATUS NG DISCORD
+    const userId = '1168714023752187934'; // USER ID NG DISCORD MO
+
+    async function fetchDiscordStatus() {
+        const response = await fetch(`https://api.lanyard.rest/v1/users/${userId}`);
+        const data = await response.json();
+
+        if (data.success) {
+            const discordUser = data.data.discord_user;
+            const discordStatus = data.data.discord_status;
+            const spotify = data.data.spotify;
+
+            document.getElementById('username').textContent = `${discordUser.username}#${discordUser.discriminator}`;
+
+            document.getElementById('status').textContent = discordStatus.charAt(0).toUpperCase() + discordStatus.slice(1);
+
+            const dot = document.getElementById('statusDot');
+            const statusColors = {
+                online: '#43b581',
+                idle: '#faa61a',
+                dnd: '#f04747',
+                offline: '#747f8d'
+            };
+            dot.style.backgroundColor = statusColors[discordStatus] || '#747f8d';
+
+            const avatarUrl = `https://cdn.discordapp.com/avatars/${discordUser.id}/${discordUser.avatar}.png?size=128`;
+            document.getElementById('userAvatar').src = avatarUrl;
+
+            if (spotify) {
+                document.getElementById('spotifyContainer').style.display = 'block';
+                document.getElementById('spotifySong').textContent = spotify.song;
+                document.getElementById('spotifyArtist').textContent = spotify.artist;
+            } else {
+                document.getElementById('spotifyContainer').style.display = 'none';
+            }
+        }
+    }
+
+    fetchDiscordStatus();
+    setInterval(fetchDiscordStatus, 15000);
+</script>
+
+<script>
+    // PARA SA COMMENTS
+    document.addEventListener("DOMContentLoaded", function() {
+        const form = document.getElementById("comment-form");
+        const nameInput = document.getElementById("comment-name");
+        const textInput = document.getElementById("comment-text");
+        const commentsList = document.getElementById("comments-list");
+
+        // Load saved comments from localStorage
+        const savedComments = JSON.parse(localStorage.getItem("guestbookComments")) || [];
+        savedComments.forEach(comment => {
+            const commentEntry = document.createElement("div");
+            commentEntry.classList.add("comment-entry");
+            commentEntry.innerHTML = `<strong>${comment.name}:</strong> ${comment.message}`;
+            commentsList.appendChild(commentEntry);
+        });
+
+        form.addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            const name = nameInput.value.trim();
+            const message = textInput.value.trim();
+
+            if (name && message) {
+                const commentEntry = document.createElement("div");
+                commentEntry.classList.add("comment-entry");
+                commentEntry.innerHTML = `<strong>${name}:</strong> ${message}`;
+                
+                commentsList.appendChild(commentEntry);
+                
+                // Save comment to localStorage
+                savedComments.push({ name, message });
+                localStorage.setItem("guestbookComments", JSON.stringify(savedComments));
+                
+                nameInput.value = "";
+                textInput.value = "";
+            }
+        });
+    });
+</script>
+
+<audio id="bg-music" loop>
+    <source src="NATEMAN.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+<script>
+    window.addEventListener("DOMContentLoaded", () => {
+        const bgMusic = document.getElementById("bg-music");
+
+        // Try playing audio after user interaction (best practice for autoplay)
+        const tryPlay = () => {
+            bgMusic.muted = false;
+            bgMusic.play().then(() => {
+                console.log("Background music playing");
+                document.removeEventListener("click", tryPlay);
+            }).catch(err => {
+                console.warn("Autoplay failed. Waiting for user interaction...");
+            });
+        };
+
+        // Try immediately
+        tryPlay();
+
+        // Fallback: wait for user interaction
+        document.addEventListener("click", tryPlay);
+    });
+</script>
+
+
+
+</html>
